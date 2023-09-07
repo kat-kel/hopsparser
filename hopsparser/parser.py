@@ -1185,7 +1185,7 @@ class BiAffineParser(nn.Module):
 
         with open(config_path) as in_stream:
             config_dict = json.load(in_stream)
-        config = BiAffineParserConfig.parse_obj(config_dict)
+        config = BiAffineParserConfig.model_validate(config_dict)
 
         lexers_path = model_path / "lexers"
 
